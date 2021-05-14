@@ -6,9 +6,6 @@ import LoadingScreen from "../screens/loadingScreen";
 import AuthScreen from "../screens/test";
 
 const screens = {
-  Test: {
-    screen: AuthScreen,
-  },
   Loading: {
     screen: LoadingScreen,
   },

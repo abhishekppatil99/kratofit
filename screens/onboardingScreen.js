@@ -9,7 +9,6 @@ export default function OnboardingScreen({ navigation }) {
   const signInWithGoogleAsync = async () => {
     try {
       const result = await Google.logInAsync({
-        behavior: "web",
         androidClientId:
           "597366679229-e0914bsejmtdcicqresk3a3b8hhpivhn.apps.googleusercontent.com",
         //iosClientId: YOUR_CLIENT_ID_HERE,
@@ -17,6 +16,7 @@ export default function OnboardingScreen({ navigation }) {
       });
 
       if (result.type === "success") {
+        navigation.replace("Login");
         return result.accessToken;
       } else {
         return { cancelled: true };
