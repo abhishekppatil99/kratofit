@@ -12,6 +12,7 @@ export default function OnboardingScreen({ navigation }) {
         androidClientId:
           "597366679229-e0914bsejmtdcicqresk3a3b8hhpivhn.apps.googleusercontent.com",
         //iosClientId: YOUR_CLIENT_ID_HERE,
+      
         scopes: ["profile", "email"],
       });
 
