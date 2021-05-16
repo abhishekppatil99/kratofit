@@ -11,8 +11,9 @@ export default function OnboardingScreen({ navigation }) {
       const result = await Google.logInAsync({
         androidClientId:
           "597366679229-e0914bsejmtdcicqresk3a3b8hhpivhn.apps.googleusercontent.com",
-        //iosClientId: YOUR_CLIENT_ID_HERE,
-      
+        iosClientId:
+          "597366679229-6av3t81p63s5k53clqpn85l97tqjs482.apps.googleusercontent.com",
+
         scopes: ["profile", "email"],
       });
 

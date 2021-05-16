@@ -6,14 +6,14 @@ import LoadingScreen from "../screens/loadingScreen";
 import AuthScreen from "../screens/test";
 
 const screens = {
+  Login: {
+    screen: LoginScreen,
+  },
   Loading: {
     screen: LoadingScreen,
   },
   Onboarding: {
     screen: OnboardingScreen,
-  },
-  Login: {
-    screen: LoginScreen,
   },
 };
 

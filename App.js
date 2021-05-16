@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet } from "react-native";
 import Navigator from "./routes/onboardingStack";
 import AppLoading from "expo-app-loading";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import * as Font from "expo-font";
 
@@ -20,7 +21,11 @@ export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
   if (fontsLoaded) {
-    return <Navigator />;
+    return (
+      <SafeAreaProvider>
+        <Navigator />
+      </SafeAreaProvider>
+    );
   } else {
     return (
       <AppLoading
