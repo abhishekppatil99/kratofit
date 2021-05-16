@@ -11,6 +11,7 @@ export default function LoginScreen({ navigation }) {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>Workouts</Text>
+        <Text>Hello</Text>
       </View>
     </View>
   );
@@ -21,17 +22,16 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#212227",
     padding: 32,
-    alignItems: "center",
   },
   header: {
     display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   headerText: {
     color: "white",
-    fontSize: 30,
-    fontWeight: "bold",
-    marginTop: 30,
-    alignSelf: "flex-start",
-    marginLeft: -170,
+    fontSize: 32,
+    fontFamily: "ubuntu-bold",
   },
 });
