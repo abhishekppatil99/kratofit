@@ -3,9 +3,16 @@ import { createAppContainer } from "react-navigation";
 import OnboardingScreen from "../screens/onboardingScreen";
 import LoginScreen from "../screens/loginScreen";
 import LoadingScreen from "../screens/loadingScreen";
-import AuthScreen from "../screens/test";
+
+// To be removed
+import RepBased from "../screens/repBased";
 
 const screens = {
+  // To be removed
+  RepBased: {
+    screen: RepBased,
+  },
+
   Login: {
     screen: LoginScreen,
   },
