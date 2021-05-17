@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Navigator from "./routes/onboardingStack";
 import AppLoading from "expo-app-loading";
 import { SafeAreaProvider } from "react-native-safe-area-context";
@@ -22,9 +22,9 @@ export default function App() {
 
   if (fontsLoaded) {
     return (
-      <SafeAreaProvider>
+      <View style={styles.container}>
         <Navigator />
-      </SafeAreaProvider>
+      </View>
     );
   } else {
     return (
@@ -40,7 +40,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    paddingTop: Platform.OS === "android" ? 25 : 0,
   },
 });
