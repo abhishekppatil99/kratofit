@@ -74,9 +74,9 @@ export default function LoginScreen({ navigation }) {
             );
           })}
         </ScrollView>
-        <Button style={styles.buttonStyle}>
+        {/* <Button style={styles.buttonStyle}>
           <Text style={styles.buttonTextStyle}>+</Text>
-        </Button>
+        </Button> */}
         {/* <TouchableOpacity onPress={() => console.log("Add")} style={{}}>
           <Icon
             name="add"
