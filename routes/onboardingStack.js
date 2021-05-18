@@ -6,9 +6,14 @@ import LoadingScreen from "../screens/loadingScreen";
 
 // To be removed
 import RepBased from "../screens/repBased";
+import TimerBased from "../screens/timerBased";
 
 const screens = {
   // To be removed
+  TimerBased: {
+    screen: TimerBased,
+  },
+
   RepBased: {
     screen: RepBased,
   },

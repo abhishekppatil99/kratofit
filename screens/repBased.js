@@ -25,6 +25,7 @@ export default function RepBased() {
         {/* Input Elements */}
         <View style={styles.inputContainer}>
           <Input
+            containerStyle={{ paddingHorizontal: 0}}
             onSubmitEditing={() => input.current.focus()}
             blurOnSubmit={false}
             returnKeyType="next"
@@ -47,6 +48,7 @@ export default function RepBased() {
           />
           <View style={{ paddingTop: 40 }}>
             <Input
+              containerStyle={{ paddingHorizontal: 0}}
               ref={input}
               keyboardType="number-pad"
               placeholder="20"
