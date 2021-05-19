@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { Icon, Input, Button } from "react-native-elements";
 
-export default function RepBased() {
+export default function RepBased({ navigation }) {
   const windowHeight = useWindowDimensions().height;
   const input = React.createRef();
 
@@ -18,14 +18,14 @@ export default function RepBased() {
         {/*Header Elements  */}
         <View style={styles.header}>
           <Text style={styles.headerText}>Rep Based</Text>
-          <TouchableOpacity onPress={() => console.log("Close Clicked")}>
+          <TouchableOpacity onPress={() => navigation.replace("Dashboard")}>
             <Icon name="close" type="material" color="#FFFFFF" size={32} />
           </TouchableOpacity>
         </View>
         {/* Input Elements */}
         <View style={styles.inputContainer}>
           <Input
-            containerStyle={{ paddingHorizontal: 0}}
+            containerStyle={{ paddingHorizontal: 0 }}
             onSubmitEditing={() => input.current.focus()}
             blurOnSubmit={false}
             returnKeyType="next"
@@ -48,7 +48,7 @@ export default function RepBased() {
           />
           <View style={{ paddingTop: 40 }}>
             <Input
-              containerStyle={{ paddingHorizontal: 0}}
+              containerStyle={{ paddingHorizontal: 0 }}
               ref={input}
               keyboardType="number-pad"
               placeholder="20"

@@ -1,7 +1,7 @@
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 import OnboardingScreen from "../screens/onboardingScreen";
-import LoginScreen from "../screens/loginScreen";
+import Dashboard from "../screens/dashboard";
 import LoadingScreen from "../screens/loadingScreen";
 
 // To be removed
@@ -10,6 +10,9 @@ import TimerBased from "../screens/timerBased";
 
 const screens = {
   // To be removed
+  Dashboard: {
+    screen: Dashboard,
+  },
   TimerBased: {
     screen: TimerBased,
   },
@@ -18,9 +21,6 @@ const screens = {
     screen: RepBased,
   },
 
-  Login: {
-    screen: LoginScreen,
-  },
   Loading: {
     screen: LoadingScreen,
   },

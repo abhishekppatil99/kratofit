@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { Icon, Input, Button, CheckBox } from "react-native-elements";
 
-export default function TimerBased() {
+export default function TimerBased({ navigation }) {
   const windowHeight = useWindowDimensions().height;
   const mpe = React.createRef();
   const spe = React.createRef();
@@ -30,7 +30,7 @@ export default function TimerBased() {
         {/*Header Elements  */}
         <View style={styles.header}>
           <Text style={styles.headerText}>Timer Based</Text>
-          <TouchableOpacity onPress={() => console.log("Close Clicked")}>
+          <TouchableOpacity onPress={() => navigation.replace("Dashboard")}>
             <Icon name="close" type="material" color="#FFFFFF" size={32} />
           </TouchableOpacity>
         </View>

@@ -12,7 +12,7 @@ export default function LoadingScreen({ navigation }) {
   useEffect(() => {
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
-        navigation.navigate("Login");
+        navigation.navigate("Dashboard");
       } else {
         navigation.navigate("Onboarding");
       }
