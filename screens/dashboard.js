@@ -4,11 +4,12 @@ import {
   View,
   Text,
   TouchableOpacity,
-  useWindowDimensions,
-  Image,
+  Button,
+  TouchableWithoutFeedback,
 } from "react-native";
-import { Header, Icon, Button, Card, Overlay } from "react-native-elements";
+import { Icon, Card, Overlay } from "react-native-elements";
 import { ScrollView } from "react-native-gesture-handler";
+import Modal from "react-native-modal";
 
 export default function Dashboard({ navigation }) {
   const [workouts, setWorkouts] = useState([
@@ -67,7 +68,7 @@ export default function Dashboard({ navigation }) {
                   width: 500,
                   height: 80,
                   backgroundColor: "#C4C4C4",
-                  borderRadius: "40%",
+                  borderRadius: 32,
                   borderWidth: 0,
                   alignSelf: "center",
                   margin: 20,
@@ -77,7 +78,7 @@ export default function Dashboard({ navigation }) {
           })}
         </ScrollView>
         <TouchableOpacity
-          activeOpacity={0.5}
+          activeOpacity={0.9}
           style={styles.TouchableOpacityStyle}
           onPress={() => setModal(true)}
         >
@@ -96,7 +97,7 @@ export default function Dashboard({ navigation }) {
             name="add"
             type="material"
             color="#FF2140"
-            size={35}
+            size={28}
           />
         </TouchableOpacity>
 
@@ -110,7 +111,7 @@ export default function Dashboard({ navigation }) {
             iconStyle={{ alignSelf: "center", marginTop: 15 }}
           />
         </TouchableOpacity> */}
-        <Overlay
+        {/* <Overlay
           isVisible={modal}
           animationType="slide"
           onBackdropPress={() => setModal(false)}
@@ -120,11 +121,11 @@ export default function Dashboard({ navigation }) {
             alignSelf: "flex-end",
             marginTop: "auto",
             backgroundColor: "#212227",
-            borderTopStartRadius: "30%",
-            borderTopEndRadius: "30%",
+            borderTopStartRadius: 32,
+            borderTopEndRadius: 32,
           }}
         >
-          {/*<Text style={{ color: "white" }}>Hello from Overlay!</Text>*/}
+          <Text style={{ color: "white" }}>Hello from Overlay!</Text>
           <View style={{ display: "flex", flexDirection: "row", flex: 1 }}>
             <TouchableOpacity onPress={() => setModal(false)}>
               <Icon
@@ -155,7 +156,7 @@ export default function Dashboard({ navigation }) {
                 color="#FF2140"
                 size={40}
               />
-              <Text style={{ color: "white", fontWeight: "bold" }}>
+              <Text style={{ color: "white", fontFamily: "ubuntu-bold" }}>
                 Time Based
               </Text>
             </TouchableOpacity>
@@ -177,12 +178,100 @@ export default function Dashboard({ navigation }) {
                 color="#FF2140"
                 size={40}
               />
-              <Text style={{ color: "white", fontWeight: "bold" }}>
+              <Text style={{ color: "white", fontFamily: "ubuntu-bold" }}>
                 Rep Based
               </Text>
             </TouchableOpacity>
           </View>
-        </Overlay>
+        </Overlay> */}
+        <Modal
+          isVisible={modal}
+          backdropOpacity={0.3}
+          onBackdropPress={() => setModal(false)}
+          style={{
+            margin: 0,
+          }}
+        >
+          <View style={{ flex: 1 }}>
+            <View style={{ flex: 0.7 }}></View>
+            <View
+              style={{
+                flex: 0.3,
+                backgroundColor: "#212227",
+                borderTopRightRadius: 32,
+                borderTopLeftRadius: 32,
+              }}
+            >
+              <View
+                style={{
+                  flexDirection: "row",
+                  marginTop: 32,
+                  marginLeft: 32,
+                }}
+              >
+                <TouchableOpacity onPress={() => setModal(false)}>
+                  <Icon
+                    name="close"
+                    type="material"
+                    color="#FFFFFF"
+                    size={25}
+                  />
+                </TouchableOpacity>
+              </View>
+              <View
+                style={{
+                  flexDirection: "row",
+                  flex: 0.8,
+                  justifyContent: "space-between",
+                  paddingHorizontal: 64,
+                }}
+              >
+                <TouchableOpacity
+                  onPress={() => navigation.replace("TimerBased")}
+                  style={{
+                    alignSelf: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Icon
+                    reverse
+                    iconStyle={{
+                      alignSelf: "center",
+                    }}
+                    name="timer"
+                    type="material"
+                    color="#FF2140"
+                    size={32}
+                  />
+                  <Text style={{ color: "white", fontFamily: "ubuntu-bold" }}>
+                    Time Based
+                  </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => navigation.replace("RepBased")}
+                  style={{
+                    alignSelf: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Icon
+                    reverse
+                    iconStyle={{
+                      alignSelf: "center",
+                    }}
+                    name="fitness-center"
+                    type="material"
+                    color="#FF2140"
+                    size={32}
+                  />
+                  <Text style={{ color: "white", fontFamily: "ubuntu-bold" }}>
+                    Rep Based
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        </Modal>
       </View>
     </>
   );
@@ -217,8 +306,8 @@ const styles = StyleSheet.create({
   },
   TouchableOpacityStyle: {
     position: "absolute",
-    width: 80,
-    height: 80,
+    width: 64,
+    height: 64,
     alignItems: "center",
     justifyContent: "center",
     right: 32,
@@ -229,5 +318,10 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
     width: 220,
     height: 220,
+  },
+  overlay: {
+    backgroundColor: "rgba(0,0,0,0.2)",
+    flex: 1,
+    justifyContent: "flex-end",
   },
 });
