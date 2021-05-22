@@ -6,7 +6,11 @@ import * as Font from "expo-font";
 
 import firebase from "firebase";
 import { firebaseConfig } from "./config";
-//firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+} else {
+  firebase.app(); // if already initialized, use that one
+}
 
 const getFonts = () => {
   return Font.loadAsync({

@@ -10,6 +10,12 @@ import TimerBased from "../screens/timerBased";
 
 const screens = {
   // To be removed
+  Loading: {
+    screen: LoadingScreen,
+  },
+  Onboarding: {
+    screen: OnboardingScreen,
+  },
   Dashboard: {
     screen: Dashboard,
   },
@@ -19,13 +25,6 @@ const screens = {
 
   RepBased: {
     screen: RepBased,
-  },
-
-  Loading: {
-    screen: LoadingScreen,
-  },
-  Onboarding: {
-    screen: OnboardingScreen,
   },
 };
 
