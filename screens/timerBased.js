@@ -190,7 +190,7 @@ export default function TimerBased({ navigation }) {
         </View>
         {/* Continue Button */}
         <Button
-          onPress={() => console.log("Continue Clicked")}
+          onPress={() => navigation.navigate("ExerciseList", { item: 1 })}
           title="Continue"
           raised={true}
           titleStyle={{ fontFamily: "ubuntu-bold", fontSize: 24, padding: 8 }}

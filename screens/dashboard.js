@@ -65,10 +65,10 @@ export default function Dashboard({ navigation }) {
               <Card
                 key={index}
                 containerStyle={{
-                  width: 500,
-                  height: 80,
+                  width: 347,
+                  height: 82,
                   backgroundColor: "#C4C4C4",
-                  borderRadius: 32,
+                  borderRadius: 15,
                   borderWidth: 0,
                   alignSelf: "center",
                   margin: 20,
@@ -303,6 +303,7 @@ const styles = StyleSheet.create({
   },
   workoutContainer: {
     flex: 1,
+    width: "100%",
   },
   TouchableOpacityStyle: {
     position: "absolute",

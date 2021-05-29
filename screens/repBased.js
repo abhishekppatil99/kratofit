@@ -77,7 +77,7 @@ export default function RepBased({ navigation }) {
         </View>
         {/* Continue Button */}
         <Button
-          onPress={() => console.log("Continue Clicked")}
+          onPress={() => navigation.navigate("ExerciseList")}
           title="Continue"
           raised={true}
           titleStyle={{ fontFamily: "ubuntu-bold", fontSize: 24, padding: 8 }}
